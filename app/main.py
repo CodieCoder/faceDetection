@@ -22,5 +22,6 @@ for(x, y, w, h) in face:
 plt.figure(figsize=(20,10))
 plt.imshow(img_rgb)
 plt.axis('off')
+plt.show(block=True)
 
 # print(face)
