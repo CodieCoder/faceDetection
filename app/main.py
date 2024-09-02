@@ -2,7 +2,7 @@ import cv2
 import cv2.data
 import matplotlib.pyplot as plt
 
-imagePath = '../mock/file.png'
+imagePath = './mock/file.png'
 img = cv2.imread(imagePath)#Read the image with openCV
 img_in_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 #Load the built-in pre-trained Haar Cascade classifier
@@ -13,7 +13,7 @@ face = face_classifier.detectMultiScale(img_in_gray, scaleFactor=1.1, minNeighbo
 
 #drawing a bounding box around detected faces
 for(x, y, w, h) in face:
-    cv2.rectangle(img, (x,y), (x + w + y + h), (0, 255, 0), 4)      
+    cv2.rectangle(img, (x,y), (x + w, y + h), (0, 255, 0),thickness=4)      
     img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
 #convert from BGR to RGB
