@@ -20,9 +20,9 @@ while True:
     result, videoFeed = video_capture.read()
     
     #terminate the loop if the frame is not read successfully
-    # if result is False:
-    #     print("An error occurred")
-    #     break
+    if result is False:
+        print("An error occurred. Video stream could not be read.")
+        break
     
     #apply the function to display the bounding box around detected images
     faces = detect_bounding_box(videoFeed=videoFeed)
